@@ -1,3 +1,4 @@
+import 'package:bluegrocer/src/auth/components/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -25,20 +26,20 @@ class SignInScreen extends StatelessWidget {
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(45),
                   )),
-              child: Column(
+              child: const Column(
                 children: [
                   // email
-                  TextFormField(
-                    decoration: InputDecoration(
-                      isDense: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(18)
-                      )
-                    ),
+                  CustomTextField(
+                    icon: Icons.email,
+                    label: 'Email',
                   ),
 
                   // senha
-                  TextFormField(),
+                  CustomTextField(
+                    icon: Icons.lock,
+                    label: 'Senha',
+                    isObscure: true,
+                  ),
                 ],
               ),
             ),
