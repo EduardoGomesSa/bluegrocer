@@ -163,7 +163,7 @@ class SignInScreen extends StatelessWidget {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (c) {
-                                return const SignUpScreen();
+                                return SignUpScreen();
                               },
                             ),
                           );
