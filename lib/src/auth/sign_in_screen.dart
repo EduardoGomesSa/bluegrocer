@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bluegrocer/src/auth/components/custom_text_field.dart';
+import 'package:bluegrocer/src/auth/sign_up_screen.dart';
 import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -24,28 +25,20 @@ class SignInScreen extends StatelessWidget {
                   children: [
                     // Nome do app
                     Text.rich(
-                      TextSpan(
-                        style: const TextStyle(
-                          fontSize: 40
-                        ),
-                        children: [
-                          const TextSpan(
+                      TextSpan(style: const TextStyle(fontSize: 40), children: [
+                        const TextSpan(
                             text: 'Green',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                            )
-                          ),
-                          TextSpan(
+                            )),
+                        TextSpan(
                             text: 'grocer',
                             style: TextStyle(
-                              color: CustomColors.customContrastColor
-                            )
-                          )
-                        ]
-                      ),
+                                color: CustomColors.customContrastColor))
+                      ]),
                     ),
-                    
+
                     // Categorias
                     SizedBox(
                       height: 30,
@@ -89,14 +82,14 @@ class SignInScreen extends StatelessWidget {
                       icon: Icons.email,
                       label: 'Email',
                     ),
-          
+
                     // senha
                     const CustomTextField(
                       icon: Icons.lock,
                       label: 'Senha',
                       isSecret: true,
                     ),
-          
+
                     // botão de entrar
                     SizedBox(
                       height: 50,
@@ -115,7 +108,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-          
+
                     // esqueceu a senha
                     Align(
                       alignment: Alignment.centerRight,
@@ -128,7 +121,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           )),
                     ),
-          
+
                     // linha divisora
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
@@ -153,7 +146,7 @@ class SignInScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-          
+
                     // Botão de criar conta
                     SizedBox(
                       height: 50,
@@ -166,7 +159,15 @@ class SignInScreen extends StatelessWidget {
                               width: 2,
                               color: Colors.green,
                             )),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (c) {
+                                return const SignUpScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Criar conta',
                           style: TextStyle(
