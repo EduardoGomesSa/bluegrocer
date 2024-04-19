@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:bluegrocer/src/auth/components/custom_text_field.dart';
-import 'package:bluegrocer/src/auth/sign_up_screen.dart';
-import 'package:bluegrocer/src/base/base_screen.dart';
+import 'package:bluegrocer/src/pages/auth/components/custom_text_field.dart';
+import 'package:bluegrocer/src/pages/auth/sign_up_screen.dart';
 import 'package:bluegrocer/src/config/custom_colors.dart';
+import 'package:bluegrocer/src/pages/home/base/base_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -102,7 +102,7 @@ class SignInScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(builder: (c){
-                              return BaseScreen();
+                              return const BaseScreen();
                             })
                           );
                         },

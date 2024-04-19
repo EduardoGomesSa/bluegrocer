@@ -1,4 +1,4 @@
-import 'package:bluegrocer/src/auth/sign_in_screen.dart';
+import 'package:bluegrocer/src/pages/auth/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

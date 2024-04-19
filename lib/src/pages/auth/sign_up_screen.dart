@@ -1,4 +1,4 @@
-import 'package:bluegrocer/src/auth/components/custom_text_field.dart';
+import 'package:bluegrocer/src/pages/auth/components/custom_text_field.dart';
 import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
