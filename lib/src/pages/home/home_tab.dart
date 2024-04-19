@@ -1,5 +1,6 @@
 import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:bluegrocer/src/pages/home/components/category_tile.dart';
+import 'package:bluegrocer/src/pages/home/components/item_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:bluegrocer/src/config/app_data.dart' as app_data;
 
@@ -136,7 +137,9 @@ class _HomeTabState extends State<HomeTab> {
               ),
               itemCount: app_data.items.length,
               itemBuilder: (_, index){
-                return Container(color: Colors.red);
+                return ItemTile(
+                  item: app_data.items[index],
+                );
               },
             ),
           ),
