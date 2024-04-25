@@ -2,9 +2,7 @@ import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:bluegrocer/src/models/item_model.dart';
 import 'package:bluegrocer/src/pages/product/product_screen.dart';
 import 'package:bluegrocer/src/services/utils_services.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ItemTile extends StatelessWidget {
   ItemTile({
