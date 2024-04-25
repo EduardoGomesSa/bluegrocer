@@ -1,6 +1,7 @@
 import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:bluegrocer/src/services/utils_services.dart';
 import 'package:flutter/material.dart';
+import 'package:bluegrocer/src/config/app_data.dart' as app_data;
 
 class CartTab extends StatelessWidget {
   CartTab({super.key});
@@ -15,11 +16,13 @@ class CartTab extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const Expanded(
-            child: Placeholder(),
-          ),
-          const SizedBox(
-            height: 20,
+          Expanded(
+            child: ListView.builder(
+              itemCount: app_data.cartItems.length,
+              itemBuilder: (_, index){
+                return Text(app_data.cartItems[index].item.itemName);
+              },
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(16),
