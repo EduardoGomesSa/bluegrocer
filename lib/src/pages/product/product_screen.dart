@@ -1,5 +1,6 @@
 import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:bluegrocer/src/models/item_model.dart';
+import 'package:bluegrocer/src/pages/common_widgets/quantity_widget.dart';
 import 'package:bluegrocer/src/services/utils_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -58,11 +59,7 @@ class ProductScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            height: 30,
-                            width: 70,
-                            color: Colors.red,
-                          )
+                          const QuantityWidget(),
                         ],
                       ),
                       // Preço
