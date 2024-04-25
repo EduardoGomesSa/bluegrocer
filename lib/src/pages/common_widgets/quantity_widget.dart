@@ -34,7 +34,7 @@ class QuantityWidget extends StatelessWidget {
             color: Colors.grey,
             onPressed: () {
               if(value == 1) return;
-              
+
               int resultCount = value - 1;
 
               result(resultCount);
@@ -71,7 +71,6 @@ class _QuantityButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const _QuantityButton({
-    super.key,
     required this.color,
     required this.icon,
     required this.onPressed,
