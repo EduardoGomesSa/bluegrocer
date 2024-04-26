@@ -10,4 +10,5 @@ class CartItemModel {
     required this.quantity,
   });
   
+  double totalPrice() => item.price * quantity;
 }
