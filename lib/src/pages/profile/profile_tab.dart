@@ -20,29 +20,53 @@ class ProfileTab extends StatelessWidget {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
-        children: const [
+        children: [
           // email
           CustomTextField(
+            readOnly: true,
+            initialValue: app_data.user.email,
             icon: Icons.email,
             label: 'Email',
           ),
 
           // nome
           CustomTextField(
+            readOnly: true,
+            initialValue: app_data.user.name,
             icon: Icons.person,
             label: 'Nome',
           ),
           // celular
           CustomTextField(
+            readOnly: true,
+            initialValue: app_data.user.phone,
             icon: Icons.phone,
             label: 'Celular',
           ),
           // cpf
           CustomTextField(
+            readOnly: true,
+            initialValue: app_data.user.cpf,
             icon: Icons.file_copy,
             label: 'CPF',
+            isSecret: true,
           ),
           // botão de atualizar senha
+          SizedBox(
+            height: 50,
+            child: OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(
+                  color: Colors.green,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              onPressed: () {},
+              child: const Text('Atualizar Senha'),
+            ),
+          ),
         ],
       ),
     );
