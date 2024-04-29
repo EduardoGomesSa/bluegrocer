@@ -117,4 +117,18 @@ List<OrderModel> orders = [
     copyAndPaste: 'asadassdasfcd',
     total: 11,
   ),
+  OrderModel(
+    id: '33abcdsqw',
+    createdDateTime: DateTime.parse('2021-06-08 10:00:10.458'),
+    overdueDateTime: DateTime.parse('2021-06-08 11:00:10.458'),
+    items: [
+      CartItemModel(
+        item: guava,
+        quantity: 2,
+      ),
+    ],
+    status: 'pending_payment',
+    copyAndPaste: '34frefesfdd',
+    total: 11.5,
+  ),
 ];

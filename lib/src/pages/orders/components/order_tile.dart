@@ -1,5 +1,6 @@
 import 'package:bluegrocer/src/models/cart_item_model.dart';
 import 'package:bluegrocer/src/models/order_model.dart';
+import 'package:bluegrocer/src/pages/orders/components/order_status_widget.dart';
 import 'package:bluegrocer/src/services/utils_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,7 @@ class OrderTile extends StatelessWidget {
               height: 150,
               child: Row(
                 children: [
+                  // lista de produtos
                   Expanded(
                     flex: 3,
                     child: ListView(
@@ -52,12 +54,21 @@ class OrderTile extends StatelessWidget {
                       }).toList(),
                     ),
                   ),
+
+                  // divisão
+                  VerticalDivider(
+                    color: Colors.grey.shade300,
+                    thickness: 2,
+                    width: 8,
+                  ),
+                  // status do pedido
                   Expanded(
                     flex: 2,
-                    child: Container(
-                      color: Colors.blue,
+                    child: OrderStatusWidget(
+                      status: order.status,
+                      isOverdue: order.overdueDateTime.isBefore(DateTime.now()),
                     ),
-                  )
+                  ),
                 ],
               ),
             )
