@@ -99,10 +99,11 @@ UserModel user = UserModel(
 );
 
 List<OrderModel> orders = [
+  // pedido 1
   OrderModel(
     id: '12abcdsqw',
-    createdDateTime: DateTime.parse('2021-06-08 10:00:10.458'),
-    overdueDateTime: DateTime.parse('2021-06-08 11:00:10.458'),
+    createdDateTime: DateTime.parse('2024-06-08 10:00:10.458'),
+    overdueDateTime: DateTime.parse('2024-06-08 11:00:10.458'),
     items: [
       CartItemModel(
         item: apple,
@@ -117,17 +118,18 @@ List<OrderModel> orders = [
     copyAndPaste: 'asadassdasfcd',
     total: 11,
   ),
+  // pedido 2
   OrderModel(
     id: '33abcdsqw',
-    createdDateTime: DateTime.parse('2021-06-08 10:00:10.458'),
-    overdueDateTime: DateTime.parse('2021-06-08 11:00:10.458'),
+    createdDateTime: DateTime.parse('2024-06-08 10:00:10.458'),
+    overdueDateTime: DateTime.parse('2024-06-08 11:00:10.458'),
     items: [
       CartItemModel(
         item: guava,
         quantity: 2,
       ),
     ],
-    status: 'refunded',
+    status: 'delivered',
     copyAndPaste: '34frefesfdd',
     total: 11.5,
   ),
