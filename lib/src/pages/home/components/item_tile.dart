@@ -8,10 +8,14 @@ class ItemTile extends StatelessWidget {
   ItemTile({
     super.key,
     required this.item,
+    required this.cartAnimationMethod,
   });
 
   final ItemModel item;
   final UtilsServices utilsServices = UtilsServices();
+  final void Function(GlobalKey) cartAnimationMethod;
+  final GlobalKey widgetKey = GlobalKey();
+  //final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +48,12 @@ class ItemTile extends StatelessWidget {
                   Expanded(
                     child: Hero(
                       tag: item.imgUrl,
-                      child: Image.asset(item.imgUrl),
+                      child: Container(
+                        key: widgetKey,
+                        child: Image.asset(
+                          item.imgUrl,
+                        ),
+                      ),
                     ),
                   ),
                   // nome
@@ -87,15 +96,19 @@ class ItemTile extends StatelessWidget {
           top: 4,
           right: 4,
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              cartAnimationMethod(widgetKey);
+            },
             child: Container(
               height: 40,
               width: 35,
               decoration: BoxDecoration(
-                  color: CustomColors.customSwatchColor,
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      topRight: Radius.circular(20))),
+                color: CustomColors.customSwatchColor,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  topRight: Radius.circular(20),
+                ),
+              ),
               child: const Icon(
                 Icons.add_shopping_cart_outlined,
                 color: Colors.white,
