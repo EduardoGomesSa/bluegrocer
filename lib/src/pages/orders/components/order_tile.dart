@@ -1,5 +1,6 @@
 import 'package:bluegrocer/src/models/cart_item_model.dart';
 import 'package:bluegrocer/src/models/order_model.dart';
+import 'package:bluegrocer/src/pages/common_widgets/payment_dialog.dart';
 import 'package:bluegrocer/src/pages/orders/components/order_status_widget.dart';
 import 'package:bluegrocer/src/services/utils_services.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +102,16 @@ class OrderTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return PaymentDialog(
+                        order: order,
+                      );
+                    },
+                  );
+                },
                 icon: const Icon(Icons.pix),
                 label: const Text('Ver QR Code Pix'),
               ),

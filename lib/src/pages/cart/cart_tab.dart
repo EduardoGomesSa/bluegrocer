@@ -1,6 +1,7 @@
 import 'package:bluegrocer/src/config/custom_colors.dart';
 import 'package:bluegrocer/src/models/cart_item_model.dart';
 import 'package:bluegrocer/src/pages/cart/components/cart_tile.dart';
+import 'package:bluegrocer/src/pages/common_widgets/payment_dialog.dart';
 import 'package:bluegrocer/src/services/utils_services.dart';
 import 'package:flutter/material.dart';
 import 'package:bluegrocer/src/config/app_data.dart' as app_data;
@@ -92,7 +93,16 @@ class _CartTabState extends State<CartTab> {
                     onPressed: () async {
                       bool? result = await showOrderConfirmation();
 
-                      print(result);
+                      if (result ?? false) {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            return PaymentDialog(
+                              order: app_data.orders.first,
+                            );
+                          },
+                        );
+                      }
                     },
                     child: const Text(
                       'Concluir Pedido',
